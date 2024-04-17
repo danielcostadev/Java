@@ -1,5 +1,3 @@
-package br.com.criacodes.testes;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
