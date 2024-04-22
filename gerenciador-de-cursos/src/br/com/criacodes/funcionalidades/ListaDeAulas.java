@@ -1,4 +1,4 @@
-package br.com.criacodes.funcionalidades;
+	package br.com.criacodes.funcionalidades;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -19,11 +19,9 @@ public class ListaDeAulas {
 			System.out.println("LISTA DE AULAS CADASTRADAS");
 			Collections.sort(aulas);
 			aulas.forEach(aula -> System.out.printf("=======================%nID: %d%nAula: %s%nDuração: %dmin%n",
-					aula.getId(), aula.getNome(), aula.getDuracao()));
+					aulas.indexOf(aula)+1, aula.getNome(), aula.getDuracao()));
 		} else {
-			System.out.println("----------------------------------------------");
-			System.out.println("Que pena. Nenhuma aula foi adicionada a lista!");
-			System.out.println("----------------------------------------------");
+			System.out.println("Que pena. A lista de aulas está vazia!");
 		}
 	}
 }

@@ -21,7 +21,8 @@ public class ManipulacaoDeDados {
 	// Inicializa um BufferedReader para ler a entrada do teclado,
 	// utilizando InputStreamReader para definir o charset UTF-8,
 	// garantindo a correta interpretação de caracteres Unicode.
-	private static BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in, StandardCharsets.UTF_8));
+	private static BufferedReader teclado = new BufferedReader(
+			new InputStreamReader(System.in, StandardCharsets.UTF_8));
 	private static CadastroDeAulas cadAulas = new CadastroDeAulas();
 	private static RemocaoDeAulas remAulas = new RemocaoDeAulas();
 
@@ -40,14 +41,11 @@ public class ManipulacaoDeDados {
 			switch (opcao) {
 			case "1":
 				limparConsole();
-				cadAulas.cadastrarAula();
-				limparConsole();
-				System.out.println("-----------------------------------");
-				System.out.println("Registro realizado com sucesso!");
+				System.out.printf((cadAulas.cadastrarAula())? "%nRegistro realizado com sucesso!%n":"%nNenhum registro realizado!%n");
 				break;
 			case "2":
 				limparConsole();
-				remAulas.removerAula();
+				System.out.println((remAulas.removerAula()) ? "Registro removido com sucesso!":"A lista está vazia!");
 				break;
 			case "3":
 				limparConsole();
@@ -57,8 +55,10 @@ public class ManipulacaoDeDados {
 				limparConsole();
 				System.out.println("-----------------------------------");
 				System.out.println("Aplicação encerrada com sucesso!");
+				System.out.println("-----------------------------------");
 				System.exit(0);
 			default:
+				limparConsole();
 				System.out.println("-----------------------------------");
 				System.out.println("Por favor Digite 1, 2, 3 ou 4");
 				break;

@@ -12,11 +12,11 @@ public class RemocaoDeAulas {
 	// garantindo a correta interpretação de caracteres Unicode.
 	private static BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in, StandardCharsets.UTF_8));
 
-	public void removerAula() throws IOException {
+	public boolean removerAula() throws IOException {
 		
 		if(ListaDeAulas.aulas.isEmpty()) {
 			
-			ListaDeAulas.ListarAulas();
+			return false;
 			
 		}else {
 			
@@ -34,7 +34,9 @@ public class RemocaoDeAulas {
 			// Removemos a aula da lista
 			ListaDeAulas.aulas.remove(aulaId-1);
 			
-			ListaDeAulas.ListarAulas();
+			// Limpa o console e retorna true
+			ManipulacaoDeDados.limparConsole();
+			return true;
 		}
 	}
 }
